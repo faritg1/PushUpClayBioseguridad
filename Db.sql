@@ -101,3 +101,13 @@ CREATE TABLE ContactoPersona(
     CONSTRAINT FkPersonaC FOREIGN KEY (IdPersonaFk) REFERENCES Persona(Id)
 );
 
+CREATE TABLE Programacion(
+    Id INT NOT NULL,
+    IdContratoFk INT NOT NULL,
+    IdTurnoFk INT NOT NULL,
+    IdEmpleadoFk INT NOT NULL,
+    CONSTRAINT FkContrato FOREIGN KEY (IdContratoFk) REFERENCES Contrato(Id),
+    CONSTRAINT FkTurno FOREIGN KEY (IdTurnoFk) REFERENCES Turno(Id),
+    CONSTRAINT FkEmpleadoO FOREIGN KEY (IdEmpleadoFk) REFERENCES Persona(Id)
+);
+
